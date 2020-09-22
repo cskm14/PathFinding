@@ -2,7 +2,7 @@
 
 void GenerateByBinaryTree()
 {
-	// ÀÏ´Ü ±æÀ» ´Ù ¸·¾Æ¹ö¸®´Â ÀÛ¾÷
+	// ì¼ë‹¨ ê¸¸ì„ ë‹¤ ë§‰ì•„ë²„ë¦¬ëŠ” ì‘ì—…
 	for (int y = 0; y < SIZE; y++)
 	{
 		for (int x = 0; x < SIZE; x++)
@@ -14,7 +14,7 @@ void GenerateByBinaryTree()
 		}
 	}
 
-	// ·£´ıÀ¸·Î ¿À¸¥ÂÊ ¶Ç´Â ¾Æ·¡·Î ±æÀ» ¶Õ´Â ÀÛ¾÷
+	// ëœë¤ìœ¼ë¡œ ì˜¤ë¥¸ìª½ ë˜ëŠ” ì•„ë˜ë¡œ ê¸¸ì„ ëš«ëŠ” ì‘ì—…
 	for (int y = 0; y < SIZE; y++)
 	{
 		for (int x = 0; x < SIZE; x++)
@@ -48,7 +48,7 @@ void GenerateByBinaryTree()
 
 void GenerateBySideWinder()
 {
-	// ÀÏ´Ü ±æÀ» ´Ù ¸·¾Æ¹ö¸®´Â ÀÛ¾÷
+	// ì¼ë‹¨ ê¸¸ì„ ë‹¤ ë§‰ì•„ë²„ë¦¬ëŠ” ì‘ì—…
 	for (int y = 0; y < SIZE; y++)
 	{
 		for (int x = 0; x < SIZE; x++)
@@ -60,7 +60,7 @@ void GenerateBySideWinder()
 		}
 	}
 
-	// ·£´ıÀ¸·Î ¿À¸¥ÂÊ ¶Ç´Â ¾Æ·¡·Î ±æÀ» ¶Õ´Â ÀÛ¾÷
+	// ëœë¤ìœ¼ë¡œ ì˜¤ë¥¸ìª½ ë˜ëŠ” ì•„ë˜ë¡œ ê¸¸ì„ ëš«ëŠ” ì‘ì—…
 	for (int y = 0; y < SIZE; y++)
 	{
 		int count = 1;
@@ -102,8 +102,8 @@ void GenerateBySideWinder()
 void MapInitialize()
 {
 	srand((unsigned)time(NULL));
-	// GenerateByBinaryTree();
-	GenerateBySideWinder();
+	GenerateByBinaryTree();
+	//GenerateBySideWinder();
 }
 
 int GetTileColor(int y, int x)
@@ -119,13 +119,13 @@ int GetTileColor(int y, int x)
 	}
 }
 
-void Render() // ¸Ê ·»´õ¸µÇÏ±â
+void Render() // ë§µ ë Œë”ë§í•˜ê¸°
 {
 	for (int y = 0; y < SIZE; y++)
 	{
 		for (int x = 0; x < SIZE; x++)
 		{
-			// ÇÃ·¹ÀÌ¾î ÁÂÇ¥¸¦ °®°í ¿Í¼­, ±× ÁÂÇ¥¶û ÇöÀç y, x°¡ ÀÏÄ¡ÇÏ¸é ÇÃ·¹ÀÌ¾î Àü¿ë »ö»óÀ¸·Î Ç¥½Ã.
+			// í”Œë ˆì´ì–´ ì¢Œí‘œë¥¼ ê°–ê³  ì™€ì„œ, ê·¸ ì¢Œí‘œë‘ í˜„ì¬ y, xê°€ ì¼ì¹˜í•˜ë©´ í”Œë ˆì´ì–´ ì „ìš© ìƒ‰ìƒìœ¼ë¡œ í‘œì‹œ.
 			if (y == player.Y && x == player.X)
 				SetConsoleTextColor(GREEN);
 			else if (y == dest.Y && x == dest.X)
@@ -133,7 +133,7 @@ void Render() // ¸Ê ·»´õ¸µÇÏ±â
 			else
 				SetConsoleTextColor(GetTileColor(y, x));
 
-			printf("¡Ü");
+			printf("â—");
 		}
 		printf("\n");
 	}
